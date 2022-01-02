@@ -33,6 +33,7 @@ namespace EnozomTask.Controllers
                 holidayObj.HolidayName = i.summary;
                 holidayObj.HolidayStartDate = i.start.date;
                 holidayObj.HolidayEndDate = i.end.date;
+                holidayObj.publicid = i.id;
                 holidayList.Add(holidayObj);
             }
             //TODO: transform the response here to suit your needs
@@ -75,17 +76,30 @@ namespace EnozomTask.Controllers
                 {
                     foreach (dynamic i in responseContent.items)
                     {
-                        var holidayObj = new Holiday();
-                        holidayObj.HolidayName = i.summary;
-                        holidayObj.HolidayStartDate = i.start.date;
-                        holidayObj.HolidayEndDate = i.end.date;
-                        holidayObj.countryid = country.id;
-                        _context.Add(holidayObj);
+                        var y = (string)i.id;
+                        var holiday = await _context.Holidays.Where(x => x.publicid == y).FirstOrDefaultAsync();
+                        if (holiday == null)
+                        {
+                            var holidayObj = new Holiday();
+                            holidayObj.HolidayName = i.summary;
+                            holidayObj.HolidayStartDate = i.start.date;
+                            holidayObj.HolidayEndDate = i.end.date;
+                            holidayObj.countryid = country.id;
+                            holidayObj.publicid = i.id;
+                            _context.Add(holidayObj);
+                        }
+                        else
+                        {
+                            holiday.HolidayName = i.summary;
+                            holiday.HolidayStartDate = i.start.date;
+                            holiday.HolidayEndDate = i.end.date;
+                        }
+                        
                     }
-                    await _context.SaveChangesAsync();
+                   
                 }
             }
-
+            await _context.SaveChangesAsync();
 
             return Ok("Added Successfully");
         }
