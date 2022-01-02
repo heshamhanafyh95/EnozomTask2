@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "E5dfsi+LAiUW5bbE+zQIMfpMNToUQBbgLdSJk0b/S4eBeEnX0zehxGtjQW1WL18D145sYNvmYQlaYIaa2cq7OA==",
+  "dgSpecHash": "+CvQakM7ihQDP9Z+GQUnTam/va27Dq+IUiTsJNk8k1whgTQm1m7uovOls2qAlQUbf1bVaAyUxBKQ20vT/tqVCg==",
   "success": true,
   "projectFilePath": "C:\\Users\\thege\\source\\repos\\EnozomTask\\EnozomTask\\EnozomTask.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thege\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\thege\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\thege\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\thege\\.nuget\\packages\\restsharp\\106.15.0\\restsharp.106.15.0.nupkg.sha512",
     "C:\\Users\\thege\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\thege\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\thege\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
