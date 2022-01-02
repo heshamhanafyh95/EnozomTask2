@@ -62,7 +62,7 @@ namespace EnozomTask.Controllers
 
         }
 
-        [HttpGet(template: "SaveHolidaysToDb")]
+        [HttpPost(template: "SaveHolidaysToDb")]
         public async Task<IActionResult> SaveCountriesToDb()
         {
             List<Holiday> holidayList = new List<Holiday>();
@@ -74,10 +74,12 @@ namespace EnozomTask.Controllers
                 dynamic responseContent = JsonConvert.DeserializeObject(response.Content);
                 if (responseContent.items != null)
                 {
+
+                    List<Holiday> HolidaysList = await _context.Holidays.ToListAsync();
                     foreach (dynamic i in responseContent.items)
                     {
                         var y = (string)i.id;
-                        var holiday = await _context.Holidays.Where(x => x.publicid == y).FirstOrDefaultAsync();
+                        var holiday = HolidaysList.Where(x => x.publicid == y).FirstOrDefault();
                         if (holiday == null)
                         {
                             var holidayObj = new Holiday();
@@ -94,9 +96,9 @@ namespace EnozomTask.Controllers
                             holiday.HolidayStartDate = i.start.date;
                             holiday.HolidayEndDate = i.end.date;
                         }
-                        
+
                     }
-                   
+
                 }
             }
             await _context.SaveChangesAsync();

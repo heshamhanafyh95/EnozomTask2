@@ -53,7 +53,7 @@ namespace EnozomTask.Controllers
         }
 
 
-        [HttpGet(template: "SaveCountriesToDb")]
+        [HttpPost(template: "SaveCountriesToDb")]
         public async Task<IActionResult> SaveCountriesToDb()
         {
             List<Country> countryList = new List<Country>();
@@ -61,10 +61,12 @@ namespace EnozomTask.Controllers
             var request = new RestRequest(Method.GET);
             IRestResponse response = await client.ExecuteAsync(request);
             dynamic responseContent = JsonConvert.DeserializeObject(response.Content);
+
+            List<Country> CountriesList = await _context.Countries.ToListAsync();
             foreach (dynamic i in responseContent)
             {
                 var y = (string)i.cca2;
-                var country = await _context.Countries.Where(x => x.CountryCca2 == y).FirstOrDefaultAsync();
+                var country = CountriesList.Where(x => x.CountryCca2 == y).FirstOrDefault();
                 if (country == null)
                 {
                     var countryObj = new Country();

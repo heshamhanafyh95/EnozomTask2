@@ -12,9 +12,8 @@ namespace EnozomTask.Migrations
             migrationBuilder.AddColumn<int>(
                 name: "publicid",
                 table: "Holidays",
-                type: "int",
-                nullable: false,
-                defaultValue: 0)
+                type: "longtext",
+                nullable: false)
                 .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
         }
 
