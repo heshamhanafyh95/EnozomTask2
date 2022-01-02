@@ -12,7 +12,7 @@ namespace EnozomTask.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    
+
     public class CountriesController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -63,15 +63,25 @@ namespace EnozomTask.Controllers
             dynamic responseContent = JsonConvert.DeserializeObject(response.Content);
             foreach (dynamic i in responseContent)
             {
-                var countryObj = new Country();
-                countryObj.CountryName = i.name.common;
-                countryObj.CountryCca2 = i.cca2;
-                _context.Add(countryObj);
-                await _context.SaveChangesAsync();
+                var y = (string)i.cca2;
+                var country = await _context.Countries.Where(x => x.CountryCca2 == y).FirstOrDefaultAsync();
+                if (country == null)
+                {
+                    var countryObj = new Country();
+                    countryObj.CountryName = i.name.common;
+                    countryObj.CountryCca2 = i.cca2;
+                    _context.Add(countryObj);
+                }
+                else
+                {
+                    country.CountryName = i.name.common;
+                }
+                
             }
+            await _context.SaveChangesAsync();
 
             return Ok("Added Successfully");
         }
-        
+
     }
 }

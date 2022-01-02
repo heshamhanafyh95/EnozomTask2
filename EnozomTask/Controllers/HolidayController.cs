@@ -67,7 +67,6 @@ namespace EnozomTask.Controllers
             List<Holiday> holidayList = new List<Holiday>();
             foreach (Country? country in await _context.Countries.ToArrayAsync())
             {
-                Console.WriteLine($"https://www.googleapis.com/calendar/v3/calendars/en." + country.CountryCca2 + "%23holiday%40group.v.calendar.google.com/events?key=AIzaSyBpSZoCr4xUGsNzmAuxVw_WT0Q4hVW9Bos");
                 var client = new RestClient($"https://www.googleapis.com/calendar/v3/calendars/en." + country.CountryCca2 + "%23holiday%40group.v.calendar.google.com/events?key=AIzaSyBpSZoCr4xUGsNzmAuxVw_WT0Q4hVW9Bos");
                 var request = new RestRequest(Method.GET);
                 IRestResponse response = await client.ExecuteAsync(request);
@@ -82,8 +81,8 @@ namespace EnozomTask.Controllers
                         holidayObj.HolidayEndDate = i.end.date;
                         holidayObj.countryid = country.id;
                         _context.Add(holidayObj);
-                        await _context.SaveChangesAsync();
                     }
+                    await _context.SaveChangesAsync();
                 }
             }
 
