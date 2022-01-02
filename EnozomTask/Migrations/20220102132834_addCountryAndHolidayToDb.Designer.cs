@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EnozomTask.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220102114103_addCountryAndHolidayToDb")]
+    [Migration("20220102132834_addCountryAndHolidayToDb")]
     partial class addCountryAndHolidayToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,13 +69,13 @@ namespace EnozomTask.Migrations
 
             modelBuilder.Entity("EnozomTask.Models.Holiday", b =>
                 {
-                    b.HasOne("EnozomTask.Models.Country", "country")
+                    b.HasOne("EnozomTask.Models.Country", "Country")
                         .WithMany()
                         .HasForeignKey("countryid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("country");
+                    b.Navigation("Country");
                 });
 #pragma warning restore 612, 618
         }

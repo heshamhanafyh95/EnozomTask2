@@ -354,7 +354,7 @@
           "lib/netstandard2.1/MySql.Data.EntityFrameworkCore.dll": {}
         }
       },
-      "MySqlConnector/2.1.2": {
+      "MySqlConnector/2.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/MySqlConnector.dll": {}
@@ -1223,10 +1223,10 @@
         "mysql.data.entityframeworkcore.nuspec"
       ]
     },
-    "MySqlConnector/2.1.2": {
-      "sha512": "JVokQTUNN3WHAu9Vw8ieeq1dXTFokJiig5P0VJ4f439UxRrsPo6SaVWC8Zdm6mkPeQFhZ0/9afdWa02EY/1j/w==",
+    "MySqlConnector/2.0.0": {
+      "sha512": "EY0KXqQas+QvdZQU0NPkqBSfJitWAl8IUCg0v/Qn0P7f/KApJTFJFm8czYWoDPyewUjPHrAnE/cSYzzSFGc8Ng==",
       "type": "package",
-      "path": "mysqlconnector/2.1.2",
+      "path": "mysqlconnector/2.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1248,7 +1248,7 @@
         "lib/netstandard2.1/MySqlConnector.dll",
         "lib/netstandard2.1/MySqlConnector.xml",
         "logo.png",
-        "mysqlconnector.2.1.2.nupkg.sha512",
+        "mysqlconnector.2.0.0.nupkg.sha512",
         "mysqlconnector.nuspec"
       ]
     },
@@ -1821,7 +1821,6 @@
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.1",
       "MySql.Data >= 8.0.27",
       "MySql.Data.EntityFrameworkCore >= 8.0.22",
-      "MySqlConnector >= 2.1.2",
       "Newtonsoft.Json >= 13.0.1",
       "Pomelo.EntityFrameworkCore.MySql >= 6.0.0",
       "RestSharp >= 106.15.0",
@@ -1884,10 +1883,6 @@
           "MySql.Data.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.22, )"
-          },
-          "MySqlConnector": {
-            "target": "Package",
-            "version": "[2.1.2, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",

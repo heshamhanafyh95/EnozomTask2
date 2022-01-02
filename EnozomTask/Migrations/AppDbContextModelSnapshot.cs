@@ -67,13 +67,13 @@ namespace EnozomTask.Migrations
 
             modelBuilder.Entity("EnozomTask.Models.Holiday", b =>
                 {
-                    b.HasOne("EnozomTask.Models.Country", "country")
+                    b.HasOne("EnozomTask.Models.Country", "Country")
                         .WithMany()
                         .HasForeignKey("countryid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("country");
+                    b.Navigation("Country");
                 });
 #pragma warning restore 612, 618
         }

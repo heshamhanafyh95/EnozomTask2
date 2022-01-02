@@ -14,7 +14,6 @@
     </PackageReference>
     <PackageReference Include="MySql.Data" Version="8.0.27" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
-    <PackageReference Include="MySqlConnector" Version="2.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.0" />
     <PackageReference Include="RestSharp" Version="106.15.0" />
@@ -23,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Migrations\" />
     <Folder Include="NewFolder\" />
   </ItemGroup>
 

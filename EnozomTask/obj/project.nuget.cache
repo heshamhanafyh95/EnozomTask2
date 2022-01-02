@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "o4cN7dcUNSLOe8XVe7jrq98la3VceJzJ+jrwpYgr+c22w8E6iqk2CGKdA+0e8E/hmtKHM+YVirO/k/2UI8DTWQ==",
+  "dgSpecHash": "1Dj9/8eXd0BZMTpxru80VCYy2j/Oh3MHPfuAp3uQp6JT5CL62KOqgCAz4aRR1nsBX/LT1HKHGViQjI+lJyfE6A==",
   "success": true,
   "projectFilePath": "C:\\Users\\thege\\source\\repos\\EnozomTask\\EnozomTask\\EnozomTask.csproj",
   "expectedPackageFiles": [
@@ -31,7 +31,7 @@
     "C:\\Users\\thege\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\thege\\.nuget\\packages\\mysql.data\\8.0.27\\mysql.data.8.0.27.nupkg.sha512",
     "C:\\Users\\thege\\.nuget\\packages\\mysql.data.entityframeworkcore\\8.0.22\\mysql.data.entityframeworkcore.8.0.22.nupkg.sha512",
-    "C:\\Users\\thege\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
+    "C:\\Users\\thege\\.nuget\\packages\\mysqlconnector\\2.0.0\\mysqlconnector.2.0.0.nupkg.sha512",
     "C:\\Users\\thege\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\thege\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.0\\pomelo.entityframeworkcore.mysql.6.0.0.nupkg.sha512",
     "C:\\Users\\thege\\.nuget\\packages\\restsharp\\106.15.0\\restsharp.106.15.0.nupkg.sha512",

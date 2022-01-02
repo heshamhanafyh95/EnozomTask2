@@ -1,4 +1,5 @@
 
+using EnozomTask.Data;
 using Microsoft.EntityFrameworkCore;
 
 using MySql.Data.MySqlClient;
@@ -11,14 +12,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 var connectionString = builder.Configuration.GetConnectionString("DemoDb");
-
-builder.Services.AddTransient<MySqlConnection>(_ => new MySqlConnection(connectionString));
-
-
-
-
+builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 var app = builder.Build();
 
